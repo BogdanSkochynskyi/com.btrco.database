@@ -34,20 +34,21 @@ public class DBRunner {
 	private static final String GET_GROUP_OF_STUDENTS	= "SELECT * FROM students WHERE group_id=?";
 
 	/** 5 task */
-	private static final String GET_GROUPS_WITH_MATHEMATIC	= "";
+	private static final String GET_GROUPS_WITH_MATHEMATIC	= "SELECT * FROM groups WHERE";
 
 	/** 6 task */
 	private static final String GET_SUBJECTS_THAT_STUDIED_BY_ALL_GROUPS	= "";
 
 	/** 7 task */
-	private static final String GET_MOST_EXPERIENCED_TEACHER	= "";
-	private static final String GET_LESS_EXPERIENCED_TEACHER	= "";
+	private static final String GET_MOST_EXPERIENCED_TEACHER	= "SELECT * FROM teachers WHERE experience = (SELECT MAX(experience) FROM teachers);";
+	private static final String GET_LESS_EXPERIENCED_TEACHER	= "SELECT * FROM teachers WHERE experience = (SELECT MIN(experience) FROM teachers);";
 
 	/** 8 task */
-	private static final String GET_TEACHERS_THAT_HAVE_EXPERIENCE_MORE_THAN_3_YEARS	= "";
+	private static final String GET_TEACHERS_THAT_HAVE_EXPERIENCE_MORE_THAN_3_YEARS	= "SELECT * FROM teachers WHERE experience > 3;";
 
 	/** 9 task */
-	private static final String GET_GUMANITARIUM_SUBJECTS	= "";
+	private static final String GET_GUMANITARIUM_SUBJECTS	= "SELECT * FROM subjects WHERE name IN ('history', 'literature', 'phylosophy')";
+	private static final String GET_GUMANITARIUM_SUBJECTS2	= "SELECT * FROM subjects WHERE description LIKE %gumanitarium%";
 
 	/** 10 task */
 	private static final String GET_ALL_STUDENTS_AVG_MARK_ON_PHYSICS	= "";
